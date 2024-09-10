@@ -3,12 +3,12 @@ package servicos;
 import entidades.QuartoLuxo;
 import main.InputManager;
 import status.StatusQuarto;
-import repositorio.Repositorio;
+import repositorio.QuartoLuxoRepositorio;
 
 public class QuartoLuxoServicos {
     
     InputManager inputManager = new InputManager();
-    Repositorio<QuartoLuxo> repositorio = new Repositorio<>();
+    QuartoLuxoRepositorio repositorio = new QuartoLuxoRepositorio();
 
     public void add(){
         System.out.println();

@@ -1,13 +1,33 @@
 package servicos;
 
 import main.InputManager;
-import repositorio.Repositorio;
+import repositorio.ClienteRepositorio;
 import entidades.Cliente;
 
 public class ClienteServicos {
     
     InputManager inputManager = new InputManager();
-    Repositorio<Cliente> repositorio = new Repositorio<>();
+    ClienteRepositorio repositorio = new ClienteRepositorio();
+
+    public void grandeFodase(){
+        System.out.println("telec");
+    }
+
+    public void buscarClienteViaCPF(){
+        System.out.print("\nDigite o CPF: ");
+        String cpf = validarCPF();
+        Cliente cliente = repositorio.buscarViaCPF(cpf);
+        if(cliente==null){
+            System.out.print("\nNão foi encontrado um cliente com esse CPF no sistema.");
+            return;
+        }
+        System.out.println("\n===== ===== Cliente Encontrado! ===== =====");
+        System.out.println("Nome: "+cliente.getNome());
+        System.out.println("Email: "+cliente.getEmail());
+        System.out.println("CPF: "+cliente.getCpf());
+        System.out.print("===== ===== ===== ===== ===== ===== =====");
+        return;
+    }
 
     public void add(){
         System.out.print("\nDigite seu nome: ");
@@ -175,7 +195,7 @@ public class ClienteServicos {
                 infoClient--;
                 System.out.print("\nNome: "+repositorio.get(infoClient).getNome());
                 System.out.print("\nEmail: "+repositorio.get(infoClient).getEmail());
-                System.out.print("\nCPF: "+repositorio.get(infoClient).getCPF());
+                System.out.print("\nCPF: "+repositorio.get(infoClient).getCpf());
                 return;
             }
             System.out.print("\nOpção inválida, tente novamente: ");

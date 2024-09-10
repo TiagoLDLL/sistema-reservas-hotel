@@ -108,6 +108,11 @@ public class Main {
                 menu();
                 break;
 
+                case 16:
+                clienteServicos.buscarClienteViaCPF();
+                menu();
+                break;
+
                 default:
                 System.out.print("Opção inválida, tente novamente.");
                 break;

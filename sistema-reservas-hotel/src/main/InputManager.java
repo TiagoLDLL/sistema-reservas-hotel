@@ -22,11 +22,10 @@ public class InputManager {
 
     public final String getString(){
         while(true){
-            String string = scanner.nextLine();
-            if(string.isBlank() || string.isEmpty()){
+            String string = scanner.nextLine().trim();
+            if(string.isBlank()){
                 System.out.print("Espaço em branco, tente novamente: ");
             } else {
-                string.trim();
                 return string;
             }
         }

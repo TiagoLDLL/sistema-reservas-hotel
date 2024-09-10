@@ -30,7 +30,7 @@ public class Cliente {
         return email;
     }
 
-    public String getCPF() {
+    public String getCpf() {
         return cpf;
     }
 
